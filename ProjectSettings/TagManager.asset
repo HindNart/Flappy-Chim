@@ -45,7 +45,10 @@ TagManager:
   - name: bg
     uniqueID: 513615793
     locked: 0
-  - name: bird_pipe
+  - name: pipe
+    uniqueID: 2449188613
+    locked: 0
+  - name: bird
     uniqueID: 4161676781
     locked: 0
   - name: floor

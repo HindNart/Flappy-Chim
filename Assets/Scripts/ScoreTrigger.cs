@@ -7,6 +7,7 @@ public class ScoreTrigger : MonoBehaviour
         if (other.CompareTag("Bird"))
         {
             ScoreManager.Instance.AddScore();
+            AudioManager.Instance.PlayPointSound();
         }
     }
 }

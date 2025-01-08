@@ -18,6 +18,7 @@ public class BirdController : MonoBehaviour
         if (isAlive && (Input.GetMouseButtonDown(0) || IsTouching()))
         {
             rb.velocity = Vector2.up * jumpForce;
+            AudioManager.Instance.PlayFlapSound();
         }
 
         RotateBird();
