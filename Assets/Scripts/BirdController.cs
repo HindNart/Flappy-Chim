@@ -15,8 +15,9 @@ public class BirdController : MonoBehaviour
 
     void Update()
     {
-        if (isAlive && (Input.GetMouseButtonDown(0) || IsTouching()))
+        if (GameManager.Instance.isPlaying && isAlive && (Input.GetMouseButtonDown(0) || IsTouching()))
         {
+            rb.gravityScale = GameManager.Instance.gravity;
             rb.velocity = Vector2.up * jumpForce;
             AudioManager.Instance.PlayFlapSound();
         }

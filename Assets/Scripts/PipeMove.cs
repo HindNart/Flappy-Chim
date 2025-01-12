@@ -3,8 +3,13 @@ using UnityEngine;
 public class PipeMove : MonoBehaviour
 {
     public float speed = 2f;
-    public GameObject deletePoint;
+    private GameObject deletePoint;
     private float width;
+
+    private void Awake()
+    {
+        deletePoint = GameObject.FindGameObjectWithTag("Bg");
+    }
 
     void Start()
     {
