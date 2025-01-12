@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    public bool isPlaying = false;
+    public float gravity = 0;
     // public GameObject touchToPlay;
     // public GameObject btnReplay;
     // public GameObject btnOption;
@@ -25,13 +27,15 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
-        Time.timeScale = 0;  // Dừng game
+        // Time.timeScale = 0;  // Dừng game
         UIController.Instance.btnReplay.SetActive(false);
     }
 
     public void PlayGame()
     {
-        Time.timeScale = 1;
+        isPlaying = true;
+        gravity = 1.5f;
+        // Time.timeScale = 1;
         UIController.Instance.HideUI();
     }
 
