@@ -408,6 +408,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0692643642e6a44b9d48d9bb16f950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlaying: 0
+  gravity: 0
 --- !u!4 &125949127
 Transform:
   m_ObjectHideFlags: 0
@@ -783,7 +785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca67bbf7e66741446a64fff407a9306a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 3
+  jumpForce: 4
   maxRotationAngle: 45
   minRotationAngle: -70
 --- !u!95 &305389636
@@ -822,7 +824,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -966,7 +968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pipePrefab: {fileID: 8894994112958763964, guid: 3598b2f7c4391914abf68cd8ecd0f2dc, type: 3}
-  spawnInterval: 2
+  spawnInterval: 1.55
   heightOffset: 1.7
   pipeSpawnPoint: {fileID: 449711736}
 --- !u!4 &438458578
@@ -3834,6 +3836,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 438458577}
+          m_TargetAssemblyTypeName: PipeSpawner, Assembly-CSharp
+          m_MethodName: Spawner
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1381117913
 GameObject:
   m_ObjectHideFlags: 0
@@ -4398,7 +4412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca67bbf7e66741446a64fff407a9306a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 3
+  jumpForce: 4
   maxRotationAngle: 45
   minRotationAngle: -70
 --- !u!95 &1578324685
@@ -4437,7 +4451,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -4675,7 +4689,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -4699,7 +4713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca67bbf7e66741446a64fff407a9306a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 3
+  jumpForce: 4
   maxRotationAngle: 45
   minRotationAngle: -70
 --- !u!58 &1601208618
@@ -6837,7 +6851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca67bbf7e66741446a64fff407a9306a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 3
+  jumpForce: 4
   maxRotationAngle: 45
   minRotationAngle: -70
 --- !u!95 &1987470925
@@ -6876,7 +6890,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
