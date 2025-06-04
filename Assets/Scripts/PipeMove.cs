@@ -6,13 +6,9 @@ public class PipeMove : MonoBehaviour
     private GameObject deletePoint;
     private float width;
 
-    private void Awake()
-    {
-        deletePoint = GameObject.FindGameObjectWithTag("Bg");
-    }
-
     void Start()
     {
+        deletePoint = GameObject.FindGameObjectWithTag("Bg");
         width = deletePoint.GetComponent<Renderer>().bounds.size.x;
     }
 
@@ -22,7 +18,7 @@ public class PipeMove : MonoBehaviour
 
         if (transform.position.x < -width)  // Khi đường ống ra khỏi màn hình thì hủy
         {
-            Destroy(gameObject);
+            FindAnyObjectByType<ObjectPool>().ReturnObject(gameObject);
         }
     }
 }

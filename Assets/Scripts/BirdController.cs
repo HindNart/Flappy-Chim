@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class BirdController : MonoBehaviour
 {
-    public float jumpForce = 3f;  // Lực khi bird nhảy lên
     private Rigidbody2D rb;
-    private bool isAlive = true;  // Trạng thái của bird
-    public float maxRotationAngle = 45f;  // Góc tối đa khi ngóc đầu lên
+    public float jumpForce = 3f;
+    private bool isAlive = true;
+    public float maxRotationAngle = 45f;
     public float minRotationAngle = -70f;
 
     void Start()
@@ -15,7 +15,7 @@ public class BirdController : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.Instance.isPlaying && isAlive && (Input.GetMouseButtonDown(0) || IsTouching()))
+        if (GameManager.Instance.isPlaying && isAlive && (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || IsTouching()))
         {
             rb.gravityScale = GameManager.Instance.gravity;
             rb.velocity = Vector2.up * jumpForce;

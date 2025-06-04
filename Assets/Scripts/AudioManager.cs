@@ -10,8 +10,6 @@ public class AudioManager : MonoBehaviour
     public AudioClip flapSound;
     public AudioClip hitSound;
     public AudioClip pointSound;
-    // private bool isMusicOn = true;
-    // private bool isSfxOn = true;
 
     void Awake()
     {
@@ -46,32 +44,4 @@ public class AudioManager : MonoBehaviour
     {
         sfxSource.PlayOneShot(pointSound);
     }
-
-    // public void PauseMusic()
-    // {
-    //     isMusicOn = !isMusicOn;
-
-    //     if (isMusicOn)
-    //     {
-    //         musicSource.UnPause();
-    //     }
-    //     else
-    //     {
-    //         musicSource.Pause();
-    //     }
-    // }
-
-    // public void PauseSFX()
-    // {
-    //     isSfxOn = !isSfxOn;
-
-    //     if (isSfxOn)
-    //     {
-    //         sfxSource.UnPause();
-    //     }
-    //     else
-    //     {
-    //         sfxSource.Pause();
-    //     }
-    // }
 }

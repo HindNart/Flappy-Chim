@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,20 +6,28 @@ using UnityEngine.UI;
 
 public class ThemeSelectionManager : MonoBehaviour
 {
-    public SpriteRenderer backgroundImage1;
-    public SpriteRenderer backgroundImage2;
-    public Sprite[] themes;
+    private MeshRenderer backgroundMaterial;
+    public Material[] materials;
+    public static Action onThemeSelected;
 
     void Start()
     {
+        backgroundMaterial = GetComponent<MeshRenderer>();
         LoadTheme();
     }
 
     public void SelectTheme(int themeIndex)
     {
-        backgroundImage1.sprite = themes[themeIndex];
-        backgroundImage2.sprite = themes[themeIndex];
+        if (backgroundMaterial == null || themeIndex < 0 || themeIndex >= materials.Length)
+        {
+            Debug.LogError("Invalid theme selection or background image not set.");
+            return;
+        }
+
+        backgroundMaterial.material = materials[themeIndex];
         SaveTheme(themeIndex);
+
+        onThemeSelected?.Invoke();
     }
 
     void SaveTheme(int themeIndex)
@@ -29,7 +38,8 @@ public class ThemeSelectionManager : MonoBehaviour
     void LoadTheme()
     {
         int savedThemeIndex = PlayerPrefs.GetInt("SelectedTheme", 0);
-        backgroundImage1.sprite = themes[savedThemeIndex];
-        backgroundImage2.sprite = themes[savedThemeIndex];
+        backgroundMaterial.material = materials[savedThemeIndex];
+
+        onThemeSelected?.Invoke();
     }
 }

@@ -1,17 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public bool isPlaying = false;
     public float gravity = 0;
-    // public GameObject touchToPlay;
-    // public GameObject btnReplay;
-    // public GameObject btnOption;
-    // public GameObject btnSetting;
-    // public GameObject settingBox;
 
     void Awake()
     {
