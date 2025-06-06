@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     private int score = 0;
     private int bestScore = 0;
 
-    void Awake()
+    private void Awake()
     {
         if (Instance == null)
         {
@@ -22,7 +22,7 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    void Start()
+    private void Start()
     {
         bestScore = PlayerPrefs.GetInt("bestScore");
         bestScoreText.text = bestScore.ToString();

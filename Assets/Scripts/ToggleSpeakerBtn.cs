@@ -8,7 +8,7 @@ public class ToggleSpeakerBtn : MonoBehaviour
     private Image buttonImage;
     private bool isSpeakerOn = true;
 
-    void Start()
+    private void Start()
     {
         buttonImage = GetComponent<Image>();
         buttonImage.sprite = speakerOn;

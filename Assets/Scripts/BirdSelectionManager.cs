@@ -6,13 +6,13 @@ public class BirdSelectionManager : MonoBehaviour
 {
     public GameObject[] birds;
 
-    void Start()
+    private void Start()
     {
         HideCharacter();
         LoadCharacter();
     }
 
-    void HideCharacter()
+    private void HideCharacter()
     {
         foreach (var character in birds)
         {
@@ -27,12 +27,12 @@ public class BirdSelectionManager : MonoBehaviour
         SaveCharacter(characterIndex);
     }
 
-    void SaveCharacter(int characterIndex)
+    private void SaveCharacter(int characterIndex)
     {
         PlayerPrefs.SetInt("SelectedCharacter", characterIndex);
     }
 
-    void LoadCharacter()
+    private void LoadCharacter()
     {
         int savedCharacterIndex = PlayerPrefs.GetInt("SelectedCharacter", 0);
         birds[savedCharacterIndex].SetActive(true);

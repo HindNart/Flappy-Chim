@@ -6,13 +6,13 @@ public class PipeMove : MonoBehaviour
     private GameObject deletePoint;
     private float width;
 
-    void Start()
+    private void Start()
     {
         deletePoint = GameObject.FindGameObjectWithTag("Bg");
         width = deletePoint.GetComponent<Renderer>().bounds.size.x;
     }
 
-    void Update()
+    private void Update()
     {
         transform.position += Vector3.left * speed * Time.deltaTime;
 

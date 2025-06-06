@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIController : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
-    public static UIController Instance { get; private set; }
+    public static UIManager Instance { get; private set; }
     public GameObject touchToPlay;
     public GameObject btnReplay;
     public GameObject btnOption;
@@ -14,7 +14,7 @@ public class UIController : MonoBehaviour
     private bool showSetting = false;
     private bool showOption = false;
 
-    void Awake()
+    private void Awake()
     {
         if (Instance == null)
         {
@@ -26,11 +26,28 @@ public class UIController : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        if (btnReplay != null)
+        {
+            btnReplay.SetActive(false);
+        }
+    }
+
     public void HideUI()
     {
-        touchToPlay.SetActive(false);
-        btnSetting.SetActive(false);
-        btnOption.SetActive(false);
+        if (touchToPlay != null)
+        {
+            touchToPlay.SetActive(false);
+        }
+        else if (btnSetting != null)
+        {
+            btnSetting.SetActive(false);
+        }
+        else if (btnOption != null)
+        {
+            btnOption.SetActive(false);
+        }
         if (settingBox.activeSelf || optionBox.activeSelf)
         {
             settingBox.SetActive(false);
@@ -40,7 +57,7 @@ public class UIController : MonoBehaviour
 
     public void OpenSettingBox()
     {
-        if (optionBox.activeSelf)
+        if (optionBox != null && optionBox.activeSelf)
         {
             optionBox.SetActive(false);
             showOption = false;
@@ -52,7 +69,7 @@ public class UIController : MonoBehaviour
 
     public void OpenOptionBox()
     {
-        if (settingBox.activeSelf)
+        if (settingBox != null && settingBox.activeSelf)
         {
             settingBox.SetActive(false);
             showSetting = false;

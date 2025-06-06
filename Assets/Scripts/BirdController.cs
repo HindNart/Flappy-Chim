@@ -8,12 +8,12 @@ public class BirdController : MonoBehaviour
     public float maxRotationAngle = 45f;
     public float minRotationAngle = -70f;
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void Update()
     {
         if (GameManager.Instance.isPlaying && isAlive && (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || IsTouching()))
         {
@@ -25,12 +25,12 @@ public class BirdController : MonoBehaviour
         RotateBird();
     }
 
-    bool IsTouching()
+    private bool IsTouching()
     {
         return Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began;
     }
 
-    void RotateBird()
+    private void RotateBird()
     {
         float angle;
         if (rb.velocity.y > 0)  // Khi chim bay lên, ngóc đầu lên
@@ -45,7 +45,7 @@ public class BirdController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         isAlive = false;  // Bird chết khi va chạm
         GameManager.Instance.GameOver();

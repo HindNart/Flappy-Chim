@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip hitSound;
     public AudioClip pointSound;
 
-    void Awake()
+    private void Awake()
     {
         if (Instance == null)
         {
@@ -24,7 +24,7 @@ public class AudioManager : MonoBehaviour
         PlayMusic();
     }
 
-    void PlayMusic()
+    private void PlayMusic()
     {
         musicSource.clip = music;
         musicSource.Play();

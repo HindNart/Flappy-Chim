@@ -10,7 +10,7 @@ public class ThemeSelectionManager : MonoBehaviour
     public Material[] materials;
     public static Action onThemeSelected;
 
-    void Start()
+    private void Start()
     {
         backgroundMaterial = GetComponent<MeshRenderer>();
         LoadTheme();
@@ -30,12 +30,12 @@ public class ThemeSelectionManager : MonoBehaviour
         onThemeSelected?.Invoke();
     }
 
-    void SaveTheme(int themeIndex)
+    private void SaveTheme(int themeIndex)
     {
         PlayerPrefs.SetInt("SelectedTheme", themeIndex);
     }
 
-    void LoadTheme()
+    private void LoadTheme()
     {
         int savedThemeIndex = PlayerPrefs.GetInt("SelectedTheme", 0);
         backgroundMaterial.material = materials[savedThemeIndex];

@@ -7,7 +7,7 @@ public class ObjectPool : MonoBehaviour
     public int sizePool = 10;
     private Queue<GameObject> pool;
 
-    void Awake()
+    private void Awake()
     {
         pool = new Queue<GameObject>();
         for (int i = 0; i < sizePool; i++)

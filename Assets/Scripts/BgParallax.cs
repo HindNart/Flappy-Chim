@@ -22,7 +22,7 @@ public class BgParallax : MonoBehaviour
         material = GetComponent<Renderer>().material;
     }
 
-    void Update()
+    private void Update()
     {
         Parallax();
     }

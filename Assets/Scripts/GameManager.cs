@@ -6,10 +6,11 @@ using System;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+
     public bool isPlaying = false;
     public float gravity = 0;
 
-    void Awake()
+    private void Awake()
     {
         if (Instance == null)
         {
@@ -21,24 +22,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void Start()
-    {
-        // Time.timeScale = 0;  // Dừng game
-        UIController.Instance.btnReplay.SetActive(false);
-    }
-
     public void PlayGame()
     {
         isPlaying = true;
         gravity = 1.5f;
-        // Time.timeScale = 1;
-        UIController.Instance.HideUI();
+        UIManager.Instance.HideUI();
     }
 
     public void GameOver()
     {
         Time.timeScale = 0;  // Dừng game
-        UIController.Instance.btnReplay.SetActive(true);
+        UIManager.Instance.btnReplay.SetActive(true);
         AudioManager.Instance.PlayHitSound();
         ScoreManager.Instance.SaveBestScore();
     }
